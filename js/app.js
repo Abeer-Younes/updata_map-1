@@ -125,11 +125,11 @@ function initmap(){
 
  musical_places.forEach(function(item){
     
-    var position = musical_places[item].LatLong;
-    var name = musical_places[item].name;
-    var address = musical_places[item].address;
-    var commentt = musical_places[item].commentt;
-    var describe = musical_places[item].describe;
+    var position = item.LatLong;
+    var name = item.name;
+    var address = item.address;
+    var commentt = item.commentt;
+    var describe = item.describe;
     
     var marker = new google.maps.Marker({        
         position : position,
@@ -140,7 +140,7 @@ function initmap(){
         describe : describe,
         animation : google.maps.Animation.DROP,
     });
-    musical_places[item].marker = marker;
+    item.marker = marker;
     
     //appViewModel.musical_places()[i].marker = marker;
     var infowindow = new google.maps.InfoWindow();
@@ -150,7 +150,7 @@ function initmap(){
     marker.setMap(map);
     
 });
-    marker.addListener('click' , function(){
+    musical_places.marker.addListener('click' , function(){
         populate_infowindow(this , largeinfowindow);
     });
 } /// end initmap
