@@ -147,14 +147,13 @@ while(i < musical_places.length ){
     var infowindow = new google.maps.InfoWindow();
     var largeinfowindow = new google.maps.InfoWindow();
     
-    marker.addListener('click' , function(){
-        populate_infowindow(this , largeinfowindow);
-    });
-    
     markers.push(marker);
     marker.setMap(map);
     i++;
 }
+    marker.addListener('click' , function(){
+        populate_infowindow(this , largeinfowindow);
+    });
 } /// end initmap
 
 ////// this function to appear data on mark by wiki when click on it ///////
